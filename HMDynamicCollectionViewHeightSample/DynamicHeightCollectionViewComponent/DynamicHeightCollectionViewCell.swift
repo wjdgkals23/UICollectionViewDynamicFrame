@@ -11,19 +11,24 @@ import SnapKit
 class DynamicHeightCollectionViewCell: UICollectionViewCell {
     private let label: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 25)
+        label.font = .systemFont(ofSize: 35)
         label.numberOfLines = 2
+        label.lineBreakMode = .byWordWrapping
         label.textColor = .black
         return label
     }()
     
+    private let view = UIView()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         
-        self.addSubview(label)
+        backgroundColor = .cyan
+        contentView.addSubview(label)
         
         label.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.leading.equalToSuperview().offset(10)
+            $0.bottom.trailing.equalToSuperview().inset(10)
         }
     }
     
@@ -33,5 +38,15 @@ class DynamicHeightCollectionViewCell: UICollectionViewCell {
     
     func configureLabelText(text: String) {
         label.text = text
+    }
+    
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        super.preferredLayoutAttributesFitting(layoutAttributes)
+        
+        let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
+       
+        layoutAttributes.frame.size = contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel)
+        print(layoutAttributes)
+        return layoutAttributes
     }
 }
