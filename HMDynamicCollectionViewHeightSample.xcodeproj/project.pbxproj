@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		90A738EE26BF6D6900851B2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A738EC26BF6D6900851B2A /* Main.storyboard */; };
 		90A738F026BF6D6A00851B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A738EF26BF6D6A00851B2A /* Assets.xcassets */; };
 		90A738F326BF6D6A00851B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A738F126BF6D6A00851B2A /* LaunchScreen.storyboard */; };
+		90A738FC26BF6DE800851B2A /* DynamicHeightCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A738FB26BF6DE800851B2A /* DynamicHeightCollectionViewFlowLayout.swift */; };
+		90A738FF26BF73EF00851B2A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 90A738FE26BF73EF00851B2A /* SnapKit */; };
+		90A7390126BF746100851B2A /* DynamicHeightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A7390026BF746100851B2A /* DynamicHeightCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,8 @@
 		90A738EF26BF6D6A00851B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A738F226BF6D6A00851B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90A738F426BF6D6A00851B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A738FB26BF6DE800851B2A /* DynamicHeightCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		90A7390026BF746100851B2A /* DynamicHeightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A738FF26BF73EF00851B2A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 		90A738E526BF6D6900851B2A /* HMDynamicCollectionViewHeightSample */ = {
 			isa = PBXGroup;
 			children = (
+				90A738FA26BF6D9B00851B2A /* DynamicHeightCollectionViewComponent */,
 				90A738E626BF6D6900851B2A /* AppDelegate.swift */,
 				90A738E826BF6D6900851B2A /* SceneDelegate.swift */,
 				90A738EA26BF6D6900851B2A /* ViewController.swift */,
@@ -65,6 +72,15 @@
 				90A738F426BF6D6A00851B2A /* Info.plist */,
 			);
 			path = HMDynamicCollectionViewHeightSample;
+			sourceTree = "<group>";
+		};
+		90A738FA26BF6D9B00851B2A /* DynamicHeightCollectionViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				90A738FB26BF6DE800851B2A /* DynamicHeightCollectionViewFlowLayout.swift */,
+				90A7390026BF746100851B2A /* DynamicHeightCollectionViewCell.swift */,
+			);
+			path = DynamicHeightCollectionViewComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +99,9 @@
 			dependencies = (
 			);
 			name = HMDynamicCollectionViewHeightSample;
+			packageProductDependencies = (
+				90A738FE26BF73EF00851B2A /* SnapKit */,
+			);
 			productName = HMDynamicCollectionViewHeightSample;
 			productReference = 90A738E326BF6D6900851B2A /* HMDynamicCollectionViewHeightSample.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +129,9 @@
 				Base,
 			);
 			mainGroup = 90A738DA26BF6D6900851B2A;
+			packageReferences = (
+				90A738FD26BF73EF00851B2A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 90A738E426BF6D6900851B2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90A7390126BF746100851B2A /* DynamicHeightCollectionViewCell.swift in Sources */,
 				90A738EB26BF6D6900851B2A /* ViewController.swift in Sources */,
+				90A738FC26BF6DE800851B2A /* DynamicHeightCollectionViewFlowLayout.swift in Sources */,
 				90A738E726BF6D6900851B2A /* AppDelegate.swift in Sources */,
 				90A738E926BF6D6900851B2A /* SceneDelegate.swift in Sources */,
 			);
@@ -341,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90A738FD26BF73EF00851B2A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90A738FE26BF73EF00851B2A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90A738FD26BF73EF00851B2A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90A738DB26BF6D6900851B2A /* Project object */;
 }
