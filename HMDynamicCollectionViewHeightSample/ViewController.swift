@@ -9,10 +9,15 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
-    let dataSource: [String] = ["Text","Text Text Text", "Text Text Text", "Text"]
+    var dataSource: [String] = ["Text","Text Text Text", "Text Text Text", "Text"]
     
     let collectionView: UICollectionView = {
-        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: DynamicHeightCollectionViewFlowLayout())
+        let flowLayout = DynamicHeightCollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = .zero
+        flowLayout.minimumLineSpacing = .zero
+        flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        
+        var collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.register(DynamicHeightCollectionViewCell.self, forCellWithReuseIdentifier: DynamicHeightCollectionViewCell.description())
         return collectionView
         
